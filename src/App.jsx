@@ -62,6 +62,7 @@ export const App = () => {
 						<th>Название</th>
 						<th>Автор</th>
 						<th>Издатель</th>
+						<th>Дата</th>
 						<th>Лайки</th>
 						<th>Отзывы</th>
 					</tr>
@@ -74,6 +75,7 @@ export const App = () => {
 							<td>{book.title}</td>
 							<td>{book.author}</td>
 							<td>{book.publisher}</td>
+							<td>{book.date}</td>
 							<td>{book.likes}</td>
 							<td>{book.reviews}</td>
 						</tr>
