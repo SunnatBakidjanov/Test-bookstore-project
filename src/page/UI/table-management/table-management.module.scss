@@ -31,6 +31,7 @@
 }
 
 .reviewsInput {
+	font-size: 1.1rem;
 	width: 40px;
 	text-align: center;
 }
@@ -40,6 +41,11 @@
 }
 
 .likesValue {
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.6rem;
 	color: var(--main-font-color);
 }
 

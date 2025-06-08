@@ -3,8 +3,12 @@
 }
 
 .reviewsChange {
-	font-size: 0.8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
 	font-weight: 400;
+	height: 30px;
 	width: 40%;
 	border: 1px solid grey;
 	border-radius: 8px;
