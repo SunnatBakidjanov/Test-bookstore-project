@@ -1,3 +1,14 @@
-export const MainTitle = ({ text }) => {
-	return <h1>{text}</h1>;
+import classNames from 'classnames';
+import styles from './main-title.module.scss';
+
+export const MainTitle = ({ text, styleUsePlace }) => {
+	return (
+		<h1
+			className={classNames({
+				[styles.generateBook]: styleUsePlace === 'generateBooks',
+			})}
+		>
+			{text}
+		</h1>
+	);
 };

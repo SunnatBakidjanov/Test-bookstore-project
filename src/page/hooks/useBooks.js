@@ -8,7 +8,7 @@ const initialState = {
 	seed: 1,
 	avgLikes: 3.5,
 	avgReviews: 1.2,
-	count: 20,
+	count: 40,
 };
 
 const ACTIONS = {
@@ -16,8 +16,10 @@ const ACTIONS = {
 	GET_REVIEWS: 'GET_REVIEWS',
 	SET_LOCALE: 'SET_LOCALE',
 	SET_SEED: 'SET_SEED',
+	SET_COUNT: 'SET_COUNT',
 	SET_AVGLIKES: 'SET_AVGLIKES',
 	SET_AVGREVIEWS: 'SET_AVGREVIEWS',
+	GET_RANDOM_SEED: 'GET_RANDOM_SEED',
 };
 
 function reducer(state, { type, payload }) {
@@ -50,6 +52,20 @@ function reducer(state, { type, payload }) {
 			};
 		}
 
+		case ACTIONS.GET_RANDOM_SEED: {
+			return {
+				...state,
+				seed: Math.floor(Math.random() * 999999),
+			};
+		}
+
+		case ACTIONS.SET_COUNT: {
+			return {
+				...state,
+				count: payload,
+			};
+		}
+
 		case ACTIONS.SET_AVGLIKES: {
 			return {
 				...state,
@@ -63,7 +79,6 @@ function reducer(state, { type, payload }) {
 				avgReviews: payload,
 			};
 		}
-
 		default: {
 			return {
 				...state,
@@ -89,6 +104,7 @@ export const useBooks = () => {
 		dispatch({ type: ACTIONS.GET_BOOKS, payload: generatedBooks });
 		dispatch({ type: ACTIONS.GET_REVIEWS, payload: generatedReviews });
 	}
+
 	function setLocale(event) {
 		const value = event.target.value;
 		dispatch({ type: ACTIONS.SET_LOCALE, payload: value });
@@ -99,11 +115,19 @@ export const useBooks = () => {
 		dispatch({ type: ACTIONS.SET_SEED, payload: value });
 	}
 
+	function getRandomSeed() {
+		dispatch({ type: ACTIONS.GET_RANDOM_SEED });
+	}
+
 	function setAvgLikes(event) {
 		const value = Number(event.target.value);
 		if (isNaN(value) || value < 0 || value >= 10.1) return;
 
 		dispatch({ type: ACTIONS.SET_AVGLIKES, payload: value });
+	}
+
+	async function increaseCount(by = 10) {
+		dispatch({ type: ACTIONS.SET_COUNT, payload: bookState.count + by });
 	}
 
 	function setAvgReviews(event) {
@@ -125,7 +149,7 @@ export const useBooks = () => {
 
 	useEffect(() => {
 		loadBooks();
-	}, [bookState.locale, bookState.seed, bookState.avgLikes, bookState.avgReviews]);
+	}, [bookState.locale, bookState.seed, bookState.avgLikes, bookState.avgReviews, bookState.count]);
 
-	return { bookState, setLocale, setSeed, setAvgLikes, setAvgReviews, increaseAvgReviews, decreaseAvgReviews };
+	return { bookState, setLocale, setSeed, setAvgLikes, setAvgReviews, increaseAvgReviews, decreaseAvgReviews, getRandomSeed, increaseCount };
 };

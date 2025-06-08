@@ -1,0 +1,16 @@
+.generateBook {
+	padding: 20px 0 0 60px;
+	font-family: 'Fleur De Leah', sans-serif;
+	font-style: italic;
+	font-weight: 400;
+	font-size: 4rem;
+}
+
+@media (width <= 768px) {
+	.generateBook {
+		margin-top: 20px;
+		font-size: 3.2rem;
+		text-align: center;
+		padding: 0;
+	}
+}

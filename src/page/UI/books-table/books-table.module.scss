@@ -1,0 +1,167 @@
+.wrapper {
+	overflow: auto;
+}
+
+.table {
+	overflow: scroll;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	overflow: auto;
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+	text-align: left;
+}
+
+.thIndex {
+	width: 50px;
+}
+
+.thIsbn {
+	width: 200px;
+}
+
+.tableRow {
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.tableRow:hover {
+	background-color: #f3f4f6;
+}
+
+.expandedRow {
+	background-color: #fafafa;
+}
+
+.expandedContent {
+	display: flex;
+	overflow: auto;
+	column-gap: 30px;
+	padding: 10px 20px;
+	background-color: #f9f9f9;
+	border-radius: 0 0 6px 6px;
+}
+
+.innerImg {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.bookImg {
+	width: 150px;
+	height: 220px;
+}
+
+.bookAuthor {
+	font-family: none;
+	font-style: italic;
+	line-height: 100%;
+	width: 115px;
+	position: absolute;
+	text-align: center;
+	top: 40px;
+	font-size: 0.9rem;
+	opacity: 0.9;
+	font-weight: 600;
+	color: white;
+}
+
+.bookTitle {
+	font-family: 'Fleur De Leah';
+	line-height: 100%;
+	width: 110px;
+	position: absolute;
+	top: 100px;
+	text-align: center;
+	font-size: 1.5rem;
+	color: white;
+}
+
+.bookLikes {
+	margin-top: 10px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	column-gap: 0.4rem;
+	padding: 0.3rem 0.75rem;
+	width: 120px;
+	background-color: #dbdbdb;
+	border-radius: 8px;
+}
+
+.bookLikeImg {
+	position: relative;
+	bottom: 1px;
+	object-fit: contain;
+	width: 22px;
+	height: 22px;
+}
+
+.innerInfo {
+	width: 100%;
+	row-gap: 0.4rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.infoTitle {
+	font-size: 1.5rem;
+	line-height: 100%;
+	color: var(--main-font-color);
+}
+
+.infoAuthor {
+	font-family: none;
+	font-style: italic;
+	font-size: 1.2rem;
+	line-height: 100%;
+	color: var(--main-font-color);
+}
+
+.infoPublisher {
+	margin-top: 5px;
+	font-size: 1rem;
+	line-height: 100%;
+	color: var(--accent-font-color);
+}
+
+.infoReviewsTitle {
+	font-size: 1.5em;
+	line-height: 100%;
+	margin-top: 20px;
+}
+
+.infoReviews {
+	margin-top: 15px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+.infoItem {
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.5rem;
+	padding-bottom: 0.3rem;
+	border-bottom: 1px solid black;
+}
+
+.infoReviewer {
+	font-size: 1.1rem;
+	line-height: 100%;
+	color: var(--main-font-color);
+}
+
+.infoReview {
+	font-family: none;
+	font-style: italic;
+	font-size: 1.1rem;
+	line-height: 100%;
+	color: var(--accent-font-color);
+}
