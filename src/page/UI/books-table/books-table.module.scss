@@ -91,7 +91,7 @@ td {
 	column-gap: 0.4rem;
 	padding: 0.3rem 0.75rem;
 	width: 120px;
-	background-color: #dbdbdb;
+	background-color: #0082fc;
 	border-radius: 8px;
 }
 
@@ -101,6 +101,12 @@ td {
 	object-fit: contain;
 	width: 22px;
 	height: 22px;
+}
+
+.boolLikesCount {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: white;
 }
 
 .innerInfo {

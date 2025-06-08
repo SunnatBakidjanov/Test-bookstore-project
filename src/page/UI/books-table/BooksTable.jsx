@@ -75,7 +75,7 @@ export const BooksTable = ({ books, reviews, onScrollEnd }) => {
 													<p className={style.bookTitle}>{book.title}</p>
 													<div className={style.bookLikes}>
 														<img className={style.bookLikeImg} src={likeImg} alt="" />
-														<p>{book.likesCount}</p>
+														<p className={style.boolLikesCount}>{book.likesCount}</p>
 													</div>
 												</div>
 												<div className={style.innerInfo}>
