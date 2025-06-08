@@ -1,5 +1,5 @@
 import { BooksTable } from './UI/books-table/BooksTable';
-import { MainTitle } from './UI/main-title/mainTitle';
+import { MainTitle } from './UI/main-title/MainTitle';
 import { TableManagement } from './UI/table-management/TableManagement';
 import { useBooks } from './hooks/useBooks';
 import styles from './generate-books.module.scss';
