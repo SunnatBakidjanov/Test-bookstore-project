@@ -75,6 +75,7 @@ const getLocaleSeed = (seed, locale) => seed + Array.from(locale).reduce((sum, c
 export const generateBooks = ({ locale, seed, avgLikes, avgReviews, count }) => {
 	const faker = createFaker(locale, seed);
 	const isbnFaker = createFaker(locale, getLocaleSeed(seed, locale));
+	const reviewsFaker = createFaker(locale, getLocaleSeed(seed, locale));
 	const books = [];
 	const reviews = [];
 
@@ -96,7 +97,7 @@ export const generateBooks = ({ locale, seed, avgLikes, avgReviews, count }) => 
 		books.push(book);
 
 		for (let j = 0; j < reviewsCount; j++) {
-			reviews.push(generateReview(faker, index));
+			reviews.push(generateReview(reviewsFaker, index));
 		}
 	}
 
